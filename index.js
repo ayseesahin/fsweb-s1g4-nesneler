@@ -79,7 +79,7 @@ const degerlendirmeler = [
     {isim: "Pınar", puan: 3, geribildirim: "atıştırmalıklar harika ve gün içinde çalışmak için güzel bir cafe alanı."},
     {isim: "Ahmet", puan: 2, geribildirim: "Bu mekan beni fazla etkilemedi. Menüde özel bir şey yok ve çok pahalı. Atmosferi de ben beğenmedim ama başkaları beğenebilir." },
     {isim: "Latife", puan: 4, geribildirim: "Kesinlikle karaoke Cumalarını seviyorum! Yemek ve içki çeşitleri iyi."},
-    {isim: "Reyna", puan: 3.5, geribildirim: ""},
+    {isim: "Reyna", puan: 3.5, geribildirim: "bu mekan bir harika dostum, yine de garsonun gülümsememesinden puan kırdım"},
 ]
 
 /*  Görev 3 (ototest yok):  
