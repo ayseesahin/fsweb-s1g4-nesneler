@@ -22,7 +22,7 @@ function MenuElemaniOlustur(isim, fiyat, kategori) {
 		kategori: kategori 
 	};
 }
-
+console.log(MenuElemaniOlustur('Cheeseburger', 8, 'Burgerler'))
 
 /*  Görev 1b (otomatik test yok): 
 	Fonksiyonu çağırın!
@@ -34,6 +34,14 @@ function MenuElemaniOlustur(isim, fiyat, kategori) {
 	Örnek: MenuElemaniOlustur("Karışık Pizza",5,"Pizzalar") şunu döndürür: {isim:"Karışık Pizza",fiyat:5,kategori:"Pizzalar"}
 */
 
+function menuElemaniOlustur(isim, fiyat, kategori) {
+	return {
+		isim: isim, 
+		fiyat: fiyat, 
+		kategori: kategori, 
+	};
+}
+console.log(menuElemaniOlustur("Karışık Pizza",5,"Pizzalar"))
 
 
 /* Görev 2: 
@@ -53,7 +61,10 @@ const burger = {
 	isim: "Burger", 
 	fiyat: 18, 
 	kategori: "Öğle Yemeği", 
-
+	indirim: function(indirimUygulanacakMüsteriTipi)
+	{  
+		return (indirimUygulanacakMüsteriTipi === "öğretmen") || (indirimUygulanacakMüsteriTipi === "öğrenci") ? this.fiyat * 0.75 : this.fiyat * 0.9; 
+} 
 }
 
 
@@ -75,6 +86,7 @@ const degerlendirmeler = [
 	1. Sadece Ahmet'in geribildirimini konsolda görüntüleyin - fonksiyona gerek yok
 */
 
+console.log(degerlendirmeler[degerlendirmeler.findIndex(x => x.isim === "Ahmet")]);
 
 
 /*  Görev 4 (ototest yok):  
@@ -83,7 +95,8 @@ const degerlendirmeler = [
 	2. degerlendirmeler dizisini konsolda görüntüleyerek çalışmanızı kontrol edin
 */
 
-
+degerlendirmeler[degerlendirmeler.findIndex(x => x.isim === "Reyna")].geribildirim = "bu mekan bir harika dostum, yine de garsonun gülümsememesinden puan kırdım";
+console.log(degerlendirmeler)
 
 /*  Görev 5: 
 	isim, puan, geribildirim'i içeren bir değerlendirme nesnesi oluşturup, yeni değerlendirmeyi mevcut dizinin(array) sonuna ekleyip sonuç dizisini döndüren bir fonksiyon tanımlayın. 
@@ -97,9 +110,13 @@ const degerlendirmeler = [
 */
 
 
-function DegerledirmeEkle(/*Kodlar buraya */){
-	/*Kodlar buraya */
-	
+function DegerledirmeEkle(degerlendirmelerDizisi,musteriIsmi,musteriPuani,musteriGeriBildirimi){
+	degerlendirmelerDizisi.push({
+		isim: musteriIsmi,
+		puan: musteriPuani,
+		geribildirim: musteriGeriBildirimi
+	})
+	return degerlendirmelerDizisi;	
 }
 
 
@@ -115,8 +132,13 @@ function DegerledirmeEkle(/*Kodlar buraya */){
 */
 
 
-function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
-	/*Kodlar buraya*/
+function AnahtardanDegerlendirmeAl(degerlendirmelerDizisi, diziElemaniArrayIndex) {
+	
+	const musteriIsmi = degerlendirmelerDizisi[diziElemaniArrayIndex].isim;
+	const musteriPuani = degerlendirmelerDizisi[diziElemaniArrayIndex].puan;
+	const musteriGeriBildirimi = degerlendirmelerDizisi[diziElemaniArrayIndex].geribildirim;
+
+	return musteriIsmi + " isimli kişi " + musteriPuani + " puan verdi ve şunları yazı: " + musteriGeriBildirimi;
 
 }
 
@@ -135,10 +157,14 @@ function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
 */
 
 
-function SonDegerlendirmeyiAl(/*Kodlar buraya*/) {
-	/*Kodlar buraya*/
-} 
+function SonDegerlendirmeyiAl(degerlendirmelerDizisi) {
+	const sonMusteriIsmi = degerlendirmelerDizisi[degerlendirmelerDizisi.length - 1].isim;
+	const sonMusteriPuani = degerlendirmelerDizisi[degerlendirmelerDizisi.length - 1].puan;
+	const sonMusteriGeriBildirimi = degerlendirmelerDizisi[degerlendirmelerDizisi.length - 1].geribildirim;
 
+	return sonMusteriIsmi + " isimli kişi " + sonMusteriPuani + " puan verdi ve şunları yazdı: " + sonMusteriGeriBildirimi;
+
+}
 
 
 /////////////// BONUS  GÖRVLER////////////////////
@@ -157,9 +183,18 @@ function SonDegerlendirmeyiAl(/*Kodlar buraya*/) {
 	]
 */
 
-function PuanaGoreDegerlendirmeAl(/* Kodlar buraya */) {
-    /* Kodlar buraya */
+function PuanaGoreDegerlendirmeAl(degerlendirmelerDizisi, puanBaraji) {
+
+	const newObject = [];
+
+	for (let i=0; i<degerlendirmelerDizisi.length; i++)
+		if(Math.floor(degerlendirmelerDizisi[i].puan) === puanBaraji)
+		    newObject.push(degerlendirmelerDizisi[i]);
+
+		    return newObject;
 }
+
+console.log(PuanaGoreDegerlendirmeAl(degerlendirmeler,4));
 
 
 /*  BONUS 2:    
