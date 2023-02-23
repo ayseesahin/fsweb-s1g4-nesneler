@@ -23,6 +23,7 @@ function MenuElemaniOlustur(isim, fiyat, kategori) {
 	};
 }
 
+
 /*  Görev 1b (otomatik test yok): 
 	Fonksiyonu çağırın!
 	Aşağıdakileri uygulayarak MenuElemaniOlustur fonksiyonunuzu test edin:
