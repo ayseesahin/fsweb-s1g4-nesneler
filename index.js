@@ -138,7 +138,7 @@ function AnahtardanDegerlendirmeAl(degerlendirmelerDizisi, diziElemaniArrayIndex
 	const musteriPuani = degerlendirmelerDizisi[diziElemaniArrayIndex].puan;
 	const musteriGeriBildirimi = degerlendirmelerDizisi[diziElemaniArrayIndex].geribildirim;
 
-	return musteriIsmi + " isimli kişi " + musteriPuani + " puan verdi ve şunları yazı: " + musteriGeriBildirimi;
+	return musteriIsmi + " isimli kişi " + musteriPuani + " puan verdi ve şunları yazdı: " + musteriGeriBildirimi;
 
 }
 
@@ -204,11 +204,16 @@ console.log(PuanaGoreDegerlendirmeAl(degerlendirmeler,4));
 	
 */
 
-function UzunDegerlendirmeleriAl(/* Kodlar buraya */) {
-    /* Kodlar buraya */
+function UzunDegerlendirmeleriAl(girdiDizi) {
+	const newArray = [];
+	for(let i=0; i<girdiDizi.lengt; i++)
+	    if(girdiDizi[i].geribildirim.split(" ").length > 15)
+		    newArray.push(girdiDizi[i]);
+
+	return newArray;
 }
 
-
+console.log(UzunDegerlendirmeleriAl(degerlendirmeler));
 /*  BONUS 3:  
 	Bu ek görevde degerlendirmeler dizisi kullanılmayacak!  Bu görevde kendi nesnenizi yaratmanız gerekmektedir.
 	
@@ -227,10 +232,21 @@ function UzunDegerlendirmeleriAl(/* Kodlar buraya */) {
 */
 
 
-function arabaYapici(/* Kodlar buraya */) {
-    /* Kodlar buraya */
-    
+function arabaYapici(kilometreOlarakGirdi) {
+	const araba = {
+		kilometreSayaci: kilometreOlarakGirdi,
+		surus: function(mesafe)
+		{
+			this.kilometreSayaci = this.kilometreSayaci + mesafe;
+			return this.kilometreSayaci;
+		}
+	}
+    return araba;
 }
+
+const araba = arabaYapici(10);
+araba.surus(100);
+console.log("Bizim arabamız şu kilometrede şu an: " + araba.kilometreSayaci);
 
 
 /*  Buradan aşağıdaki kodları değiştirmeyin lütfen */
