@@ -120,7 +120,7 @@ function DegerledirmeEkle(degerlendirmelerDizisi,musteriIsmi,musteriPuani,muster
 	return degerlendirmelerDizisi;	
 }
 
-
+console.log(DegerledirmeEkle(degerlendirmeler, 'Hurşut', 2, 'Boktan yemekler!'));
 
 /*  Görev 6: 
 	Dizideki değerlendirmelerin anahtarına(key,index) bağlı olarak bir değerlendirme döndüren bir fonksiyon yazın
@@ -143,7 +143,7 @@ function AnahtardanDegerlendirmeAl(degerlendirmelerDizisi, diziElemaniArrayIndex
 
 }
 
-console.log(degerlendirmeler,"Nalan");
+console.log(AnahtardanDegerlendirmeAl(degerlendirmeler,0));
 
 /*  Görev 7:  
 	Diziden en son değerlendirmeyi döndüren adı `SonDegerlendirmeyiAl` olan bir fonksiyon yazın 
@@ -158,15 +158,14 @@ console.log(degerlendirmeler,"Nalan");
 */
 
 
+
 function SonDegerlendirmeyiAl(degerlendirmelerDizisi) {
-	const sonMusteriIsmi = degerlendirmelerDizisi[degerlendirmelerDizisi.length - 1].isim;
-	const sonMusteriPuani = degerlendirmelerDizisi[degerlendirmelerDizisi.length - 1].puan;
-	const sonMusteriGeriBildirimi = degerlendirmelerDizisi[degerlendirmelerDizisi.length - 1].geribildirim;
-
-	return sonMusteriIsmi + " isimli kişi " + sonMusteriPuani + " puan verdi ve şunları yazdı: " + sonMusteriGeriBildirimi;
-
+	const sonMusteriIsmi = degerlendirmelerDizisi[degerlendirmelerDizisi.length - 1]
+	
+	return sonMusteriIsmi.isim + " isimli kişi " + sonMusteriIsmi.puan + " puan verdi ve şunları yazdı: " + sonMusteriIsmi.geribildirim;
 }
 
+console.log(SonDegerlendirmeyiAl(degerlendirmeler));
 
 /////////////// BONUS  GÖRVLER////////////////////
 
