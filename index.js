@@ -67,6 +67,7 @@ const burger = {
 } 
 }
 
+console.log("Burgerlerin öğretmenlere fiyatı: " + burger.indirim("öğretmen") + " \'dir.");
 
 
 ///////////////Değerlendirmeler (MVP)///////////////////
@@ -214,6 +215,7 @@ function UzunDegerlendirmeleriAl(girdiDizi) {
 }
 
 console.log(UzunDegerlendirmeleriAl(degerlendirmeler));
+
 /*  BONUS 3:  
 	Bu ek görevde degerlendirmeler dizisi kullanılmayacak!  Bu görevde kendi nesnenizi yaratmanız gerekmektedir.
 	
