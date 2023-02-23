@@ -143,7 +143,7 @@ function AnahtardanDegerlendirmeAl(degerlendirmelerDizisi, diziElemaniArrayIndex
 
 }
 
-
+console.log(degerlendirmeler,"Nalan");
 
 /*  Görev 7:  
 	Diziden en son değerlendirmeyi döndüren adı `SonDegerlendirmeyiAl` olan bir fonksiyon yazın 
